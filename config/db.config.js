@@ -6,6 +6,13 @@ const sequelize = new Sequelize(config.dbName, config.dbUser, config.dbPassword,
   host: config.dbHost,
   port: parseInt(config.dbPort, 10) || 5432,
   dialect: "postgres",
+   dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
+
   logging: config.env === "development" ? (msg) => console.log(`[SQL] ${msg}`) : false,
   pool: {
     max: 10,
