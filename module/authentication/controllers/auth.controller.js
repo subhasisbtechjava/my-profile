@@ -71,7 +71,7 @@ exports.login = asyncErrorHandler(async (req, res) => {
   const userData = user.toJSON();
   delete userData.password;
 
-  return sendSuccess(res, "Login successful", {
+  return sendSuccess(res, "Login successfulsss", {
     user: userData,
     token,
   });
